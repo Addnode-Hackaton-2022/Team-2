@@ -15,11 +15,11 @@ Ett tips till teamet är att gå varvet runt och låta alla presentera sig, ni k
 * Gå igenom pp Agenda.pptx
 * Gå varvet runt och presentera era enligt frågorna ovan.
 * Välj en teamleader för erat team.
-  - Teamleader - <namn här>
+  - Teamleader - Joackim Pennerup
 * Välj ett namn för erat team. Detta skall även skrivas på dörren.
-  - Namn - <namn här>
+  - Namn - 2 Stable
 * Vilken utmaning jobbar ni med?
-  - Namn - <namn här>
+  - Namn - Videostabilisering
  
  
  ### Andra uppgiften, deadline dag 2 kl 12:30
