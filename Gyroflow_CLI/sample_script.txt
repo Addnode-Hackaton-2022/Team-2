@@ -1,0 +1,3 @@
+#Poetry and Python is needed, please make sure both are installed on the machine.
+
+poetry run python cli.py C:/Users/Aigeth/Downloads/2022-08-24_10-45-05_+0200.mov --gyro C:/Users/Aigeth/Downloads/2022-08-24_10-45-05_+0200.gcsv --camera "camera_presets/Apple_iPhone 12 Mini_1x__4k_16by9_3840x2160-59.94fps.json" --smooth -2 --zoom 0 --auto-sync
