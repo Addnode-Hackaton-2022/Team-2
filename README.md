@@ -95,7 +95,7 @@ Vi kan öppna en videoström i [Gyroflow](https://github.com/gyroflow/gyroflow) 
 
 För att kunna använda Gyroflow CLI har vi även kollat på dev branchen av den [gamla versionen](https://github.com/ElvinC/gyroflow) som innehåller CLI stöd. För att kunna låsa mot horisonten måste smoothing algoritmen bytas mot HorizonLock i cli.py. Vi har laddat upp branchen i en ZIP-fil under mappen GyroFlow_CLI med alla ändringar som vi gjort, såsom HorizonLock, döljande av synk-graf samt fix för Windows. För att kunna köra den behövs Python, Poetry & FFmpeg. Gyroflow CLI är dock väldigt långsam på att processa data. Nedan finns en exempel på CLI för GyroFlow och lokalt video med telemetridata.
 ```
-poetry run python cli.py C:/Users/Aigeth/Downloads/2022-08-24_10-45-05_+0200.mov --gyro C:/Users/Aigeth/Downloads/2022-08-24_10-45-05_+0200.gcsv --camera "camera_presets/Apple_iPhone 12 Mini_1x__4k_16by9_3840x2160-59.94fps.json" --smooth -2 --zoom 0 --auto-sync
+poetry run python cli.py C:/Users/[Användare]/Downloads/[video].mp4 --gyro C:/Users/[Användare]/Downloads/[Telemetrifil].gcsv --camera "camera_presets/Apple_iPhone 12 Mini_1x__4k_16by9_3840x2160-59.94fps.json" --smooth -2 --zoom 0 --auto-sync
 ```
 
 
