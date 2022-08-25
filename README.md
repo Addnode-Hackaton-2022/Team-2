@@ -101,7 +101,8 @@ Det är också av stor vikt att telemetridata är tidssynkroniserat med video, e
 
 För att komma vidare är vår rekommendation att kontakta utvecklarna bakom Gyroflow och tillsammans med dem arbeta fram den bästa lösningen. Troligen går det att få Gyroflow att arbeta helt strömmande. Det är mera en fråga om att lägga ner den tid som krävs.
 
-Tänkt flöde:  
+Tänkt flöde:
+
 <img src="https://github.com/Addnode-Hackaton-2022/Team-2/blob/main/data-flow.svg?raw=true" width="500">
 
 # Mall för muntlig presentation, deadline dag två kl 12:30
