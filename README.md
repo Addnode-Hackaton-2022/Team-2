@@ -50,7 +50,7 @@ Här skall sista commiten till repot vara gjord och den muntliga presentationen 
 # Inskick, deadline dag två kl 12:30
 
 ### Övergripande beskrivning och val av utmaning
-<beskrivning här>
+Vår utmaning var att stabilisera videoströmmen som kommer från drönaren via RTSP. Vi valde att undersöka flera möjliga lösningar och gick sedan vidare med två, strömma via Gyroflow och Gyroflow CLI.
 
 ### Team
 
