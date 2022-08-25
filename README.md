@@ -55,15 +55,32 @@ Här skall sista commiten till repot vara gjord och den muntliga presentationen 
 ### Team
 
 #### Namn på medlemmar 
-* <namn.>
-* <namn.>
-* <osv...>
+* Joackim Pennerup, Ida Infront AB (Teamleader)
+* Rune Lien, Symetri Europe
+* Aigeth Magendran, Canella IT Products
+* Krister Wicksell, Sokigo AB
+* Amir Sada, S-Group Solutions
+* Fredrik Åslin, Decerno AB
 
 #### Hur har ni jobbat inom teamet? Har alla gjort samma eller har ni haft olika roller?
-<beskrivning.>
+Vi började med att förutsättningslöst söka efter information kring videostabilisering och spånade kring tänkta lösningar. Efter ett tag bestämde vi oss för två spår, strömmande stabilisering via Gyroflow samt dela upp strömmen i filer och använda Gyroflow CLI.
+
+Vi delade då upp arbetet i följande delar och fortsatte arbetet med täta avstämningar och diskussioner.
+* Strömmande stabilisering via Gyroflow
+* Läsning av telemetridata
+* Dela upp videoströmmen i filer
+* Använda Gyroflow CLI
 
 ### Teknik. Beskrivningen på eran teknikstack, språk och APIer ni har använt.
-<beskrivning.>
+Arbetet har inneburit bekantskap med många nya och intressanta tekniker.
+
+Nya versionen av Gyroflow är till största delen implementerat i Rust och QML men använder även en hel del C++. Den äldre versionen är implementerad i Python.
+
+FFmpeg har använts för att analysera och konvertera video.
+
+Vi har läst på en hel del kring videoströmar och telemetridata, t.ex. om GPMF, GStreamer och Rpanion.
+
+Vi har även kodat en del .NET för att koppla ihop hela processen.
 
 ### Lösning, dessa frågor ska minst besvaras
  * Hur har ni löst utmaningen?
@@ -72,8 +89,15 @@ Här skall sista commiten till repot vara gjord och den muntliga presentationen 
  * Några rekommendationer för framtiden?
  * Några insikter, begränsningar eller utmaningar ni stött på som är intressanta att dela med der av?
 
-<beskrivning.>
+Vi har inte kommit till en färdig lösning då utmaningen är väldigt komplex. Vi kan däremot presentera vägen till en möjlig lösning och vilka utmaningar som finns.
 
+Vi kan öppna en videoström i Gyroflow efter att ha gått igenom koden och tagit bort alla antaganden om att den öppnade URL:en är en lokal sökväg. Gyroflow använder MDK Player som i sin tur använder FFmpeg vilken har bra stöd för strömmande video. MDK Player kan dock inte spela RTSP strömmen från drönaren men vi har fått andra RTSP strömmar att fungera.
+
+För att kunna använda Gyroflow CLI har vi även kollat på den gamla versionen och den pull request som finns för CLI stöd. Här har vi problem med att få det att fungera på Windows.
+
+För att komma vidare är vår rekommendation att kontakta utvecklarna bakom Gyroflow och tillsammans med dem arbeta fram den bästa lösningen. Troligen går det att få Gyroflow att arbeta helt strömmande. Det är mera en fråga om att lägga ner den tid som krävs.
+
+En av utmaningarna blir att få med telemetridata i videoströmmen. Här rekommenderar vi att kolla på GPMF (https://github.com/gopro/gpmf-write) som används av GoPro för att skicka telemetridata som ett separat spår i videoströmmen. Gyroflow kan via telemetry-parser (https://github.com/AdrianEddy/telemetry-parser) läsa GPMF direkt från videofiler.
 
 # Mall för muntlig presentation, deadline dag två kl 12:30
 Den totala tiden av presentation får ni distribuera som ni vill men den måste hållas. Presentation i form av text skall vara i en powerpoint medans demo visar ni som ni vill. Tänk bara på att ni ska hinna på utsatt tid.
