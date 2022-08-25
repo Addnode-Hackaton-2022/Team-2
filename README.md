@@ -99,7 +99,7 @@ För att komma vidare är vår rekommendation att kontakta utvecklarna bakom Gyr
 
 En av utmaningarna blir att få med telemetridata i videoströmmen. Här rekommenderar vi att kolla på [GPMF](https://github.com/gopro/gpmf-write) som används av GoPro för att skicka telemetridata som ett separat spår i videoströmmen. Gyroflow kan via [telemetry-parser](https://github.com/AdrianEddy/telemetry-parser) läsa GPMF direkt från videofiler.
 
-Det är också av stor vikt att telemetridata är tidssynkroniserat med video, eftersom synkronisering av strömmarna är det i särklass långsammaste momentet i Gyroflow. Det kräver dessutom detta moment random access läsning av båda strömmarna. 
+Det är också av stor vikt att telemetridata är tidssynkroniserat med video, eftersom synkronisering av strömmarna är det i särklass långsammaste momentet i Gyroflow. Detta moment kräver dessutom random access läsning av både video och telemetridata. 
 
 <img src="https://github.com/Addnode-Hackaton-2022/Team-2/blob/main/data-flow.svg?raw=true" width="500">
 
