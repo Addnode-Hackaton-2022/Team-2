@@ -93,7 +93,11 @@ Vi har inte kommit till en färdig lösning då utmaningen är väldigt komplex.
 
 Vi kan öppna en videoström i [Gyroflow](https://github.com/gyroflow/gyroflow) efter att ha gått igenom koden och tagit bort alla antaganden om att den öppnade URL:en är en lokal sökväg, även i [qml-video-rs](https://github.com/AdrianEddy/qml-video-rs) som används för att integrera [MDK-SDK](https://github.com/wang-bin/mdk-sdk). MDK-SDK används för att öppna videofiler och MDK-SDK använder i sin tur [FFmpeg](https://ffmpeg.org/) vilken har bra stöd för strömmande video. MDK-SDK kan dock inte spela RTSP strömmen från drönaren men vi har fått [andra](https://www.wowza.com/developer/rtsp-stream-test) RTSP strömmar att fungera. Problemet kan ligga i att strömmen [saknar ljud](https://github.com/wang-bin/mdk-sdk/issues/24). Dock hjälper det inte att inaktivera läsning av ljudspåret.
 
-För att kunna använda Gyroflow CLI har vi även kollat på dev branchen av den [gamla versionen](https://github.com/ElvinC/gyroflow) som innehåller CLI stöd. För att kunna låsa mot horisonten måste smoothing algoritmen bytas mot HorizonLock i cli.py. Gyroflow CLI är dock väldigt långsam på att processa data.
+För att kunna använda Gyroflow CLI har vi även kollat på dev branchen av den [gamla versionen](https://github.com/ElvinC/gyroflow) som innehåller CLI stöd. För att kunna låsa mot horisonten måste smoothing algoritmen bytas mot HorizonLock i cli.py. Vi har laddat upp branchen i en ZIP-fil under mappen GyroFlow_CLI med alla ändringar som vi gjort, såsom HorizonLock, döljande av synk-graf samt fix för Windows. För att kunna köra den behövs Python, Poetry & FFmpeg. Gyroflow CLI är dock väldigt långsam på att processa data. Nedan finns en exempel på CLI för GyroFlow och lokalt video med telemetridata.
+```
+poetry run python cli.py C:/Users/Aigeth/Downloads/2022-08-24_10-45-05_+0200.mov --gyro C:/Users/Aigeth/Downloads/2022-08-24_10-45-05_+0200.gcsv --camera "camera_presets/Apple_iPhone 12 Mini_1x__4k_16by9_3840x2160-59.94fps.json" --smooth -2 --zoom 0 --auto-sync
+```
+
 
 En av utmaningarna blir att få med telemetridata i videoströmmen. Här rekommenderar vi att kolla på [GPMF](https://github.com/gopro/gpmf-write) som används av GoPro för att skicka telemetridata som ett separat spår i videoströmmen. Gyroflow kan via [telemetry-parser](https://github.com/AdrianEddy/telemetry-parser) läsa GPMF direkt från videofiler.
 
