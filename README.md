@@ -91,13 +91,13 @@ Vi har även kodat en del .NET för att koppla ihop hela processen.
 
 Vi har inte kommit till en färdig lösning då utmaningen är väldigt komplex. Vi kan däremot presentera vägen till en möjlig lösning och vilka utmaningar som finns.
 
-Vi kan öppna en videoström i Gyroflow efter att ha gått igenom koden och tagit bort alla antaganden om att den öppnade URL:en är en lokal sökväg. Gyroflow använder MDK Player som i sin tur använder FFmpeg vilken har bra stöd för strömmande video. MDK Player kan dock inte spela RTSP strömmen från drönaren men vi har fått andra RTSP strömmar att fungera.
+Vi kan öppna en videoström i [Gyroflow](https://github.com/gyroflow/gyroflow) efter att ha gått igenom koden och tagit bort alla antaganden om att den öppnade URL:en är en lokal sökväg. Gyroflow använder [MDK-SDK](https://github.com/wang-bin/mdk-sdk) som i sin tur använder [FFmpeg](https://ffmpeg.org/) vilken har bra stöd för strömmande video. MDK-SDK kan dock inte spela RTSP strömmen från drönaren men vi har fått andra RTSP strömmar att fungera.
 
-För att kunna använda Gyroflow CLI har vi även kollat på den gamla versionen och den pull request som finns för CLI stöd. Här har vi problem med att få det att fungera på Windows.
+För att kunna använda Gyroflow CLI har vi även kollat på den [gamla versionen](https://github.com/ElvinC/gyroflow) och den pull request som finns för CLI stöd. Gyroflow CLI är dock väldigt långsam på att processa data.
 
 För att komma vidare är vår rekommendation att kontakta utvecklarna bakom Gyroflow och tillsammans med dem arbeta fram den bästa lösningen. Troligen går det att få Gyroflow att arbeta helt strömmande. Det är mera en fråga om att lägga ner den tid som krävs.
 
-En av utmaningarna blir att få med telemetridata i videoströmmen. Här rekommenderar vi att kolla på GPMF (https://github.com/gopro/gpmf-write) som används av GoPro för att skicka telemetridata som ett separat spår i videoströmmen. Gyroflow kan via telemetry-parser (https://github.com/AdrianEddy/telemetry-parser) läsa GPMF direkt från videofiler.
+En av utmaningarna blir att få med telemetridata i videoströmmen. Här rekommenderar vi att kolla på [GPMF](https://github.com/gopro/gpmf-write) som används av GoPro för att skicka telemetridata som ett separat spår i videoströmmen. Gyroflow kan via [telemetry-parser](https://github.com/AdrianEddy/telemetry-parser) läsa GPMF direkt från videofiler.
 
 <img src="https://github.com/Addnode-Hackaton-2022/Team-2/blob/main/data-flow.svg?raw=true" width="500">
 
