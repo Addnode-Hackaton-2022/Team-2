@@ -99,6 +99,8 @@ För att komma vidare är vår rekommendation att kontakta utvecklarna bakom Gyr
 
 En av utmaningarna blir att få med telemetridata i videoströmmen. Här rekommenderar vi att kolla på GPMF (https://github.com/gopro/gpmf-write) som används av GoPro för att skicka telemetridata som ett separat spår i videoströmmen. Gyroflow kan via telemetry-parser (https://github.com/AdrianEddy/telemetry-parser) läsa GPMF direkt från videofiler.
 
+<img src="https://github.com/Addnode-Hackaton-2022/Team-2/blob/main/data-flow.svg?raw=true" width="500">
+
 # Mall för muntlig presentation, deadline dag två kl 12:30
 Den totala tiden av presentation får ni distribuera som ni vill men den måste hållas. Presentation i form av text skall vara i en powerpoint medans demo visar ni som ni vill. Tänk bara på att ni ska hinna på utsatt tid.
 * Överblick och utmaning - 1min
