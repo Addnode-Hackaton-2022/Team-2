@@ -91,16 +91,17 @@ Vi har även kodat en del .NET för att koppla ihop hela processen.
 
 Vi har inte kommit till en färdig lösning då utmaningen är väldigt komplex. Vi kan däremot presentera vägen till en möjlig lösning och vilka utmaningar som finns.
 
-Vi kan öppna en videoström i [Gyroflow](https://github.com/gyroflow/gyroflow) efter att ha gått igenom koden och tagit bort alla antaganden om att den öppnade URL:en är en lokal sökväg. Gyroflow använder [MDK-SDK](https://github.com/wang-bin/mdk-sdk) som i sin tur använder [FFmpeg](https://ffmpeg.org/) vilken har bra stöd för strömmande video. MDK-SDK kan dock inte spela RTSP strömmen från drönaren men vi har fått andra RTSP strömmar att fungera.
+Vi kan öppna en videoström i [Gyroflow](https://github.com/gyroflow/gyroflow) efter att ha gått igenom koden och tagit bort alla antaganden om att den öppnade URL:en är en lokal sökväg, även i [qml-video-rs](https://github.com/AdrianEddy/qml-video-rs) som används för att integrera [MDK-SDK](https://github.com/wang-bin/mdk-sdk). MDK-SDK används för att öppna videofiler och MDK-SDK använder i sin tur [FFmpeg](https://ffmpeg.org/) vilken har bra stöd för strömmande video. MDK-SDK kan dock inte spela RTSP strömmen från drönaren men vi har fått [andra](https://www.wowza.com/developer/rtsp-stream-test) RTSP strömmar att fungera. Problemet kan ligga i att strömmen [saknar ljud](https://github.com/wang-bin/mdk-sdk/issues/24). Dock hjälper det inte att inaktivera läsning av ljudspåret.
 
-För att kunna använda Gyroflow CLI har vi även kollat på den [gamla versionen](https://github.com/ElvinC/gyroflow) och den pull request som finns för CLI stöd. Gyroflow CLI är dock väldigt långsam på att processa data.
-
-För att komma vidare är vår rekommendation att kontakta utvecklarna bakom Gyroflow och tillsammans med dem arbeta fram den bästa lösningen. Troligen går det att få Gyroflow att arbeta helt strömmande. Det är mera en fråga om att lägga ner den tid som krävs.
+För att kunna använda Gyroflow CLI har vi även kollat på dev branchen av den [gamla versionen](https://github.com/ElvinC/gyroflow) som innehåller CLI stöd. För att kunna låsa mot horisonten måste smoothing algoritmen bytas mot HorizonLock i cli.py. Gyroflow CLI är dock väldigt långsam på att processa data.
 
 En av utmaningarna blir att få med telemetridata i videoströmmen. Här rekommenderar vi att kolla på [GPMF](https://github.com/gopro/gpmf-write) som används av GoPro för att skicka telemetridata som ett separat spår i videoströmmen. Gyroflow kan via [telemetry-parser](https://github.com/AdrianEddy/telemetry-parser) läsa GPMF direkt från videofiler.
 
 Det är också av stor vikt att telemetridata är tidssynkroniserat med video, eftersom synkronisering av strömmarna är det i särklass långsammaste momentet i Gyroflow. Detta moment kräver dessutom random access läsning av både video och telemetridata. 
 
+För att komma vidare är vår rekommendation att kontakta utvecklarna bakom Gyroflow och tillsammans med dem arbeta fram den bästa lösningen. Troligen går det att få Gyroflow att arbeta helt strömmande. Det är mera en fråga om att lägga ner den tid som krävs.
+
+Tänkt flöde:  
 <img src="https://github.com/Addnode-Hackaton-2022/Team-2/blob/main/data-flow.svg?raw=true" width="500">
 
 # Mall för muntlig presentation, deadline dag två kl 12:30
